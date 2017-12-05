@@ -8,21 +8,16 @@ let _sql
  *  */
 function connectToDB() {
     return new Promise((resolve) => {
-        _sql = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'aravind',
-            database: 'lattis_main'
-        })
+        _sql = mysql.createConnection(process.env.DB_CONNECTION_STRING)
         _sql.connect((err) => {
-            if(err) {
+            if (err) {
                 console.log(err)
                 process.exit(1)
             } else {
                 resolve()
             }
         })
-        _sql.end();
+        _sql.end()
     })
 }
 

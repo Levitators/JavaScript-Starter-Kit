@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -7,12 +8,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-/*Start the app only if connected to the database
+/*Starts the app only if connected to the database
 * To use other databases import the respective files from the
 * database folder and follow the same steps as below*/
-mongo.connectToDB()
-    .then(() => {
-    let port = process.env.PORT || 3000
+console.log('mongo', mongo)
+mongo.connectToDB.then(() => {
+        const port = process.env.PORT || 3000
         app.listen(port, () => {
             console.log('Node app started and running on ', port)
         })

@@ -7,7 +7,8 @@ let _db
  *  @return {Promise} returns Promise which resolves the MongoDB connection Object
  *  */
 async function connectToDB() {
-    _db = await MongoClient.connect(`mongodb://root:root@ds259865.mlab.com:59865/users`)
+    console.log(process.env)
+    _db = await MongoClient.connect(process.env.DB_CONNECTION_STRING)
         .catch((err) => {
             console.log(err)
             process.exit(1)
@@ -23,6 +24,6 @@ function getConnection() {
 }
 
 module.exports = {
-    connectToDB: connectToDB (),
+    connectToDB: connectToDB(),
     getConnection: getConnection()
 }

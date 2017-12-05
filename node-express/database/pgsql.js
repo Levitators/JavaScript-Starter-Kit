@@ -1,4 +1,4 @@
-const pgp = require('pg-promise')();
+const pgp = require('pg-promise')()
 let _pg
 
 /**
@@ -8,13 +8,13 @@ let _pg
  *  */
 function connectToDB() {
     return new Promise((resolve) => {
-        _pg = pgp(`postgres://birlcvav:19QZsLOLiARafPCZOatrZobWlRYF5XGL@qdjjtnkv.db.elephantsql.com:5432/birlcvav`);
+        _pg = pgp(process.env.DB_CONNECTION_STRING)
         _pg.connect()
             .then(() => resolve(_pg))
             .catch(function (err) {
                 console.log(err)
                 process.exit(1)
-            });
+            })
     })
 }
 

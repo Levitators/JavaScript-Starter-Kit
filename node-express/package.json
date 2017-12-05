@@ -4,7 +4,8 @@
   "description": "NodeJS, Express Boilerplate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "NodeJS",
     "Express"
   ],
-  "author": "Aravindhan (thearuvi@gmail.com)",
+  "author": "Levitators (https://github.com/Levitators)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Levitators/JavaScript-Starter-Kit/issues"
@@ -31,6 +32,7 @@
     "pg-promise": "^7.3.1"
   },
   "devDependencies": {
+    "dotenv": "^4.0.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",

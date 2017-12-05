@@ -11,7 +11,7 @@ Simple NodeJS, Express Framework RESTful server boilerplate runnig in a Docker c
 
 ## Run
 
-Navigate to the project folder ane build the docker image using the below command
+Navigate to the project folder and build the docker image using the below command
 ```sh
 docker build -t node-express .
 ```
