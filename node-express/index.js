@@ -11,7 +11,6 @@ app.use(express.static('public'))
 /*Starts the app only if connected to the database
 * To use other databases import the respective files from the
 * database folder and follow the same steps as below*/
-console.log('mongo', mongo)
 mongo.connectToDB.then(() => {
         const port = process.env.PORT || 3000
         app.listen(port, () => {

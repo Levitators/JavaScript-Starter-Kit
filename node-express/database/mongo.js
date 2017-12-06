@@ -7,7 +7,6 @@ let _db
  *  @return {Promise} returns Promise which resolves the MongoDB connection Object
  *  */
 async function connectToDB() {
-    console.log(process.env)
     _db = await MongoClient.connect(process.env.DB_CONNECTION_STRING)
         .catch((err) => {
             console.log(err)
