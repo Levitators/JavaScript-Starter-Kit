@@ -1,0 +1,12 @@
+# text editor related files
+# For WebStorm
+*idea
+
+# dependencies
+node_modules
+
+# logs
+*.log
+
+# dependencies tracking file
+package-lock.json
