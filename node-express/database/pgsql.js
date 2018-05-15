@@ -6,27 +6,27 @@ let _pg
  *  Visit http://vitaly-t.github.io/pg-promise/ for docs
  *  @return {Promise} returns Promise which resolves the PostgreSQL connection Object
  *  */
-function connectToDB() {
-    return new Promise((resolve) => {
-        _pg = pgp(process.env.DB_CONNECTION_STRING)
-        _pg.connect()
-            .then(() => resolve(_pg))
-            .catch(function (err) {
-                console.log(err)
-                process.exit(1)
-            })
-    })
+function connectToDB () {
+  return new Promise((resolve) => {
+    _pg = pgp(process.env.DB_CONNECTION_STRING)
+    _pg.connect()
+      .then(() => resolve(_pg))
+      .catch(function (err) {
+        console.log(err)
+        process.exit(1)
+      })
+  })
 }
 
 /**
  *  Getter function for the PostgreSQL connection Object
  *  @return {object} returns the PostgreSQL connection object
  *  */
-function getConnection() {
-    return _pg
+function getConnection () {
+  return _pg
 }
 
 module.exports = {
-    connectToDB: connectToDB(),
-    getConnection: getConnection()
+  connectToDB: connectToDB(),
+  getConnection: getConnection()
 }
